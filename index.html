@@ -21,20 +21,49 @@
 		class="h-screen max-w-full bg-gradient-to-br from-[#bf2e34] to-[#753682] grid place-items-center"
 	>
 		<main
-			class="container max-w-screen-lg px-12 h-9 grid grid-cols-2 text-center *:bg-red-300"
+			class="container max-w-screen-lg grid grid-cols-2 text-center rounded-xl shadow-2xl bg-[#ffffff59] *:py-24 relative"
 		>
-			<section class="container">
-				<h1>Player 1</h1>
-				<p>0</p>
-				<div>
+			<section class="container player--active rounded-l-lg">
+				<h1 class="player--heading">Player 1</h1>
+				<p class="player--score">0</p>
+				<div class="player--current">
 					<p>Current</p>
 					<p>0</p>
 				</div>
 			</section>
-			<section class="container">
-				<h1>Player 2</h1>
-				<p>0</p>
+			<section class="container rounded-r-lg">	
+				<h1 class="player--heading">Player 2</h1>
+				<p class="player--score">0</p>
+				<div class="player--current">
+					<p >Current</p>
+					<p>0</p>
+				</div>
+			</section>
+			<section
+				class="absolute left-1/2 h-full -translate-x-1/2 flex flex-col gap-4 *:rounded-full *:text-xl *:font-normal py-0 *:w-max *:mx-auto *:uppercase *:px-6"
+			>
+				<button
+					class="btn bg-white/80 hover:bg-white/80 mb-auto -mt-14 shadow-2xl"
+				>
+					🔄 New game
+				</button>
+				<figure>
+					<img
+						src="Images/dice-1.png"
+						alt="Dice"
+						class="w-1/2 m-auto -translate-y-20 shadow-2xl"
+					/>
+				</figure>
+				<button class="btn bg-white/80 hover:bg-white/80 shadow-2xl">
+					🎲 Roll dice
+				</button>
+				<button class="btn bg-white/80 hover:bg-white/80 shadow-2xl">
+					📥 Hold
+				</button>
 			</section>
 		</main>
+
+		<!-- * JS REFERENCE -->
+		<script src="JS/script.js"></script>
 	</body>
 </html>

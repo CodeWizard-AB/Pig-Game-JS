@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.player--active {
+		@apply bg-[#ffffff66];
+	}
+
+	.player--heading {
+		@apply font-normal text-5xl mb-8;
+	}
+
+	.player--score {
+		@apply font-normal text-[#c7365f] text-8xl mb-36;
+	}
+
+	.player--current {
+		@apply py-4 px-8 bg-[#c7365f] text-white flex flex-col gap-4 w-max m-auto rounded-lg uppercase font-normal first:text-blue-500;
+	}
+}
+
 @layer base {
 	html {
 		font-family: "Nunito Sans", sans-serif;
+		color: #333;
 	}
 }
