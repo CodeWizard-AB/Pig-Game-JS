@@ -16,7 +16,7 @@
 	}
 
 	.player--current {
-		@apply py-4 px-8 bg-[#c7365f] text-white flex flex-col gap-4 w-max m-auto rounded-lg uppercase font-normal first:text-blue-500;
+		@apply py-6 px-16 bg-[#c7365f] text-white flex flex-col gap-4 w-max m-auto rounded-lg uppercase font-normal last:*:text-4xl first:*:text-lg first:*:tracking-wider;
 	}
 }
 
