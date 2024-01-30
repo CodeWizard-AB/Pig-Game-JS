@@ -21,7 +21,7 @@
 		class="h-screen max-w-full bg-gradient-to-br from-[#bf2e34] to-[#753682] grid place-items-center"
 	>
 		<main
-			class="container max-w-screen-lg grid grid-cols-2 text-center rounded-xl shadow-2xl bg-[#ffffff59] *:py-24 relative"
+			class="container max-w-screen-lg grid grid-cols-2 text-center rounded-xl shadow-2xl bg-[#ffffff59] *:py-24 relative transition-all duration-1000 *:uppercase"
 		>
 			<section class="container player--active rounded-l-lg" id="player-1">
 				<h1 class="player--heading">Player 1</h1>
@@ -51,7 +51,7 @@
 					<img
 						src="Images/dice-1.png"
 						alt="Dice"
-						class="w-32 m-auto -translate-y-20 shadow-2xl dice"
+						class="w-32 m-auto -translate-y-20 shadow-2xl dice hidden"
 					/>
 				</figure>
 				<button class="btn bg-white/80 hover:bg-white/80 shadow-2xl btn-roll">

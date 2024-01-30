@@ -4,7 +4,19 @@
 
 @layer components {
 	.player--active {
-		@apply bg-[#ffffff66];
+		@apply transition-all duration-1000 bg-[#ffffff66];
+	}
+
+	.player--active h1 {
+		@apply font-semibold;
+	}
+
+	.player--winner {
+		@apply bg-[#2F2F2F];
+	}
+
+	.player--winner {
+		@apply bg-white;
 	}
 
 	.player--heading {
