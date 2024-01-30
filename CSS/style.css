@@ -1113,6 +1113,17 @@ html {
   font-weight: 600;
 }
 
+.player--winner {
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 47 47 / var(--tw-bg-opacity));
+}
+
+.player--winner h1 {
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(199 54 95 / var(--tw-text-opacity));
+}
+
 .player--heading {
   margin-bottom: 2rem;
   font-size: 3rem;

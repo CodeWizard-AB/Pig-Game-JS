@@ -15,8 +15,8 @@
 		@apply bg-[#2F2F2F];
 	}
 
-	.player--winner {
-		@apply bg-white;
+	.player--winner h1 {
+		@apply text-[#c7365f] font-semibold;
 	}
 
 	.player--heading {

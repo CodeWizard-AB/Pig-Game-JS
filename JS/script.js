@@ -7,9 +7,8 @@ const playerScore1 = document.querySelector("#player--1");
 const playerScore2 = document.querySelector("#player--2");
 const diceImg = document.querySelector(".dice");
 
-let scores, activePlayer, current, playing;
-
 // ? EVENT HANDLERS | FUNCTIONS -
+let scores, activePlayer, current, playing;
 
 const gameInit = function () {
 	current = 0;
@@ -49,7 +48,6 @@ btnContainer.addEventListener("click", function (e) {
 		// * ROLL BUTTON -
 		if (e.target.classList.contains("btn-roll")) {
 			const randomDice = Math.floor(Math.random() * 6) + 1;
-			console.log(randomDice);
 			diceImg.style.display = "block";
 			diceImg.src = `Images/dice-${randomDice}.png`;
 
@@ -64,15 +62,19 @@ btnContainer.addEventListener("click", function (e) {
 
 		// * BUTTON HOLD -
 		if (e.target.classList.contains("btn-hold")) {
+			scores[activePlayer - 1] += current;
+			document.querySelector(`#player--${activePlayer}`).textContent =
+				scores[activePlayer - 1];
 			if (scores[activePlayer - 1] >= 20) {
+				playing = false;
+				diceImg.style.display = "none";
 				document
 					.querySelector(`#player-${activePlayer}`)
-					.classList.add(".player--winner");
-				playing = false;
+					.classList.remove("player--active");
+				document
+					.querySelector(`#player-${activePlayer}`)
+					.classList.add("player--winner");
 			} else {
-				scores[activePlayer - 1] += current;
-				document.querySelector(`#player--${activePlayer}`).textContent =
-					scores[activePlayer - 1];
 				switchPlayer();
 			}
 		}
