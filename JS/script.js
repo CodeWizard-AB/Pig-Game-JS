@@ -15,18 +15,18 @@ const gameInit = function () {
 	activePlayer = 1;
 	scores = [0, 0];
 	playing = true;
+	diceImg.style.display = "none";
 
 	playerScore1.textContent =
 		playerScore2.textContent =
 		document.querySelector(".player--current").lastElementChild.textContent =
 			0;
 	document.querySelectorAll("section").forEach((section) => {
-		section.classList.remove("player--active");
+		section.classList.remove("player--active", "player--winner");
 	});
 	document
 		.querySelector(`#player-${activePlayer}`)
 		.classList.add("player--active");
-	diceImg.style.display = "none";
 };
 
 gameInit();
@@ -70,10 +70,10 @@ btnContainer.addEventListener("click", function (e) {
 				diceImg.style.display = "none";
 				document
 					.querySelector(`#player-${activePlayer}`)
-					.classList.remove("player--active");
+					.classList.add("player--winner");
 				document
 					.querySelector(`#player-${activePlayer}`)
-					.classList.add("player--winner");
+					.classList.remove("player--active");
 			} else {
 				switchPlayer();
 			}
