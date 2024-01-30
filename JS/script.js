@@ -16,6 +16,18 @@ const gameInit = function () {
 	activePlayer = 1;
 	scores = [0, 0];
 	playing = true;
+
+	playerScore1.textContent =
+		playerScore2.textContent =
+		document.querySelector(".player--current").lastElementChild.textContent =
+			0;
+	document.querySelectorAll("section").forEach((section) => {
+		section.classList.remove("player--active");
+	});
+	document
+		.querySelector(`#player-${activePlayer}`)
+		.classList.add("player--active");
+	diceImg.style.display = "none";
 };
 
 gameInit();
@@ -33,23 +45,6 @@ const switchPlayer = function () {
 };
 
 btnContainer.addEventListener("click", function (e) {
-	if (e.target.classList.contains("btn-new")) {
-		current = 0;
-		activePlayer = 1;
-		scores.forEach((score) => (score = 0));
-		playing = true;
-		playerScore1.textContent =
-			playerScore2.textContent =
-			document.querySelector(".player--current").lastElementChild.textContent =
-				0;
-		document.querySelectorAll("section").forEach((section) => {
-			section.classList.remove("player--active");
-		});
-		document
-			.querySelector(`#player-${activePlayer}`)
-			.classList.add("player--active");
-	}
-
 	if (playing) {
 		// * ROLL BUTTON -
 		if (e.target.classList.contains("btn-roll")) {
@@ -82,4 +77,7 @@ btnContainer.addEventListener("click", function (e) {
 			}
 		}
 	}
+
+	// * NEW GAME -
+	e.target.classList.contains("btn-new") ? gameInit() : null;
 });
